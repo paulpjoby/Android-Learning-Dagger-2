@@ -1,4 +1,4 @@
-package net.snatchdreams.dagger2basics;
+package net.snatchdreams.dagger2basics.car;
 
 import android.util.Log;
 
@@ -19,8 +19,15 @@ public class Car {
         this.wheel = wheel;
     }
 
+    //This method will be called by dagger after the constructor is done;
+    @Inject
+    public void enableRemote(Remote remote) {
+        remote.setListener(this); // Pass the injected object into the dependency
+    }
+
     public void drive()
     {
+        engine.start();
         Log.i("Car: ", "Car Driving.............");
     }
 

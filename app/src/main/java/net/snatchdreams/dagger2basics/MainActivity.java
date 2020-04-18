@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import net.snatchdreams.dagger2basics.car.Car;
+import net.snatchdreams.dagger2basics.dagger.CarComponent;
+import net.snatchdreams.dagger2basics.dagger.DaggerCarComponent;
+
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Manual Dependency Injection
         //Dependency injection without Dagger
-        Engine engine = new Engine();
-        Wheel wheel = new Wheel();
 
-        Car myCar = new Car(engine, wheel);
+        //        Engine engine = new Engine(){};
+        //        Wheel wheel = new Wheel(null, null);
+        //        Car myCar = new Car(engine, wheel);
+
         // Here we have to take care about the creation of engine and wheel but its
         // independent from the car module
 
